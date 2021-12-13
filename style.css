@@ -49,6 +49,7 @@ nav{
     display:flex;
     align-items: center;
     padding: 0 15px;
+    margin-right: 10px;
 }
 .search-box img {
     width: 18 px;
@@ -72,6 +73,12 @@ nav{
     top: 70px;
     align-self: flex-start;
     
+}
+#cprofile{
+    flex-basis:15%;
+}
+#centerprofile{
+    flex-basis:65%;
 }
 .right-sidebar{
     background: #fff;
@@ -259,4 +266,51 @@ margin-right: 15px;
     display: inline-flex;
     align-items: center;
     margin-right: 20px;
+}
+.info-profile{
+
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom : 10px;
+    margin-right: 10px;
+    
+    
+}
+.info-profile  img,.info-profile div img{
+    
+    width:125px;
+    border-radius: 50%;
+    margin :10px 10px 10px;
+    
+}
+.info-profile div h4{
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+    padding-top: 10px;
+}
+.info-profile div div{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.info-profile div div button{
+    width: 50px;
+    font-size: 20px;
+    background: #1876f2;
+    width : 50%;
+    border-radius : 10px;
+    color: #fff;
+    margin-right: 20px;
+}
+.exp{
+    margin-top:3px;
+    background: #eaf3ff;
+    border-radius : 10px;
+}
+#compagny{
+    width: 50;
 }
