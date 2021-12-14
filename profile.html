@@ -1,8 +1,8 @@
+<!doctype html>
 <head>
     <meta charset="utf-8">
-    
-    <link rel="stylesheet" type="text/css" href="exemple.css">
-    <title>Social Network</title>
+    <script src="functions.js"></script>
+   <title>Social Network</title>
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
@@ -22,7 +22,9 @@
                 <input type ="text" placeholder = "Search">
             </div>
             <div class = "nav-user-icon">
-                <img src = "images/profile-pic.png">
+               <a href="profile.html">
+                    <img src = "images/profile-pic.png" >
+                </a>
 
             </div>
         </div>
@@ -47,8 +49,11 @@
                     <h4>Vitalik Buterin</h4>
                     <p>ethereum co-founder, met Axel Battut in july 2021</p>
                     <div>
-                        <button>Contacter</button>
+                        <button id="contact" onclick="proutfunction()"> Contacter</button>
+                        
+
                     <button>Ajouter en ami</button>
+
                     </div>
                     
 
@@ -84,7 +89,7 @@
                     
                     <div>
                         
-                        <h4>bitcoin core contributer</h4>
+                        <h4>bitcoin core contributor</h4>
                         <h6>Cryptomonnaies</h6>
                         <h5>2012-2015</h5>
                         

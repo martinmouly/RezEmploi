@@ -33,7 +33,7 @@ nav{
     width: 28px ;
     margin : 0 15px;
 }
-.nav-user-icon img {
+.nav-user-icon a img {
     width: 40px;
     border-radius:50%;
     cursor : pointer;
