@@ -1,0 +1,143 @@
+
+.write-post-container{
+    width:100%;
+    background: #fff;
+    border-radius: 6px;
+    padding : 20px;
+    color: #626262
+}
+.user-profile{
+    display: flex;
+    align-items: center;
+}
+.user-profile img {
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-profile p{
+    margin-bottom: -5px;
+    font-weight: 500;
+    color:#626262
+}
+.user-profile small{
+    font-size:12px;
+}
+.post-input-container{
+    padding-left:55px;
+    padding-top: 20px;
+}
+.post-input-container textarea{
+    width:100%;
+    border:0;
+    outline:0;
+    border-bottom: 1px solid #ccc;
+    background:transparent;
+    resize:none;
+}
+.add-post-links{
+    display:flex;
+    margin-top: 10px;
+}
+.add-post-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #626262;
+    margin-right: 30px;
+    font-size: 13px;
+}
+.add-post-links a img{
+    width : 20px;
+    margin-right : 10px;
+}
+.post-container{
+    width : 100%;
+    background: #fff;
+    padding : 20px;
+    color:#626262;
+    margin: 20px 0;
+}
+.user-profile span{
+    font-size: 13px;
+    color:#9a9a9a;
+}
+.post-text{
+    color:#9a9a9a;
+    margin: 15px 0 ;
+    font: size 15px;
+}
+.post-text span{
+    color: #626262;
+    font-weight: 500;
+}
+.post-text a{
+     color:#1876f2;
+     text-decoration: none;
+}
+.post-img{
+    width : 100%;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+.post-row{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.activity-icons div img{
+    width: 18px;
+    margin-right: 10px;
+}
+.activity-icons div{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.info-profile{
+
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom : 10px;
+    margin-right: 10px;
+    
+    
+}
+.info-profile  img,.info-profile div img{
+    
+    width:125px;
+    border-radius: 50%;
+    margin :10px 10px 10px;
+    
+}
+.info-profile div h4{
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+    padding-top: 10px;
+}
+.info-profile div div{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.info-profile div div button{
+    width: 50px;
+    font-size: 20px;
+    background: #1876f2;
+    width : 50%;
+    border-radius : 10px;
+    color: #fff;
+    margin-right: 20px;
+}
+.exp{
+    margin-top:3px;
+    background: #eaf3ff;
+    border-radius : 10px;
+}
+#compagny{
+    width: 50;
+}
