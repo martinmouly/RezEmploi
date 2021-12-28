@@ -36,7 +36,10 @@ CREATE TABLE `actualites` (
   `IP` varchar(30) NOT NULL,
   `ValideeParModerateur` tinyint(1) NOT NULL,
   `IDActualites` int(11) NOT NULL,
-  `IDUtilisateur` int(11) NOT NULL
+  `IDUtilisateur` int(11) NOT NULL,
+  `Photo` varchar(30),
+  `text` MEDIUMTEXT
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
