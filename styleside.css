@@ -7,6 +7,9 @@
 body{
     background :#efefef;
 }
+img{
+    cursor: pointer;
+}
 nav{
     display : flex;
     align-items: center;
