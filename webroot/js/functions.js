@@ -1,6 +1,6 @@
-function proutfunction() {
+function goChat() {
     console.log("test")
-  document.getElementById("contact").innerHTML = "Prout";
+    document.location.href='messagerie.html';
 }
 function getProfile(){
     document.location.href='profile.html';
