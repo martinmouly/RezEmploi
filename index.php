@@ -30,7 +30,7 @@ CloseCon($conn);
             <ul>
                 <li><img src = "images/notification.png" ></li>
                 <li><img src = "images/inbox.png" ></li>
-                <li><img src = "images/job.png" onclick="location.href='jobs.php'"></li>
+                <li><img src = "images/job.png" ></li>
               </ul>
         
         </div>
@@ -129,34 +129,7 @@ CloseCon($conn);
                 }
                 
                 ?>
-                
             
-            
-            
-            
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="">
-                    <div>
-                        <p></p>
-                        <span>Date heure</span>
-                    </div>
-                </div>
-                <p class = "post-text"> 
-                </p>
-                <img src="" class="post-img">
-                <div class="post-row">
-                    <div class="activity-icons">
-                            <div><img src="images/like-blue.png" >nlikes</div>
-                            <div><img src="images/comments.png" >ncom</div>
-                            <div><img src="images/share.png" >nshare</div>
-                            
-                    </div>
-                    
-                </div>
-            
-            
-            </div>
             
             
         </div>
