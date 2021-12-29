@@ -5,3 +5,6 @@ function goChat() {
 function getProfile(){
     document.location.href='profile.html';
 }
+function getAll(txt){
+  document.getElementsByClassName("full-ad-job").innerHTML = txt;
+}

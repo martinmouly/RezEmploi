@@ -96,7 +96,6 @@ CloseCon($conn);
                 <a href="#">#CaliforniaLove</a> <a href="#">#Westcoastbro</a> ');
                 function writePost($Prenompost,$Nompost,$Date_heure,$Post,$image,$profile)
                 {
-                    echo $profile;
                     echo "<div class='post-container'>
                     <div class='user-profile'>
                 <img src=$profile>
@@ -133,15 +132,6 @@ CloseCon($conn);
             
             
         </div>
-
-
-
-
-
-
-
-
-
         <div class="right-sidebar">
             <div class="sidebar-title">
                 <h4>Events</h4>
