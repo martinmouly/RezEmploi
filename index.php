@@ -30,7 +30,7 @@ CloseCon($conn);
             <ul>
                 <li><img src = "images/notification.png" ></li>
                 <li><img src = "images/inbox.png" ></li>
-                <li><img src = "images/job.png" onclick="location.href='jobs.html'"></li>
+                <li><img src = "images/job.png" onclick="location.href='jobs.php'"></li>
               </ul>
         
         </div>
@@ -64,10 +64,13 @@ CloseCon($conn);
             <div class="write-post-container">
                 <div class="user-profile">
                     <img src="images/profile-pic.png">
-                    <div>
-                        <p>Prenompost Nompost</p>
-                        <small>Public <i class="fas fa-caret-down"></i></small>
-                    </div>
+                    <?php
+                    $Prenom = "Axel";
+                    $Nom = "Battut";
+
+                    echo "<div><p>$Prenom $Nom</p><small>Public <i class='fas fa-caret-down'></i></small></div>"
+                    ?>
+                    
                 </div>
                 <div class="post-input-container">
                     <textarea rows="3" placeholder= "what's on your mind ?"></textarea>
@@ -80,66 +83,68 @@ CloseCon($conn);
                 </div>
                
             </div>
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="images/profile-pic.png">
-                    <div>
-                        <p>Prenompost Nompost</p>
-                        <span>Date heure</span>
-                    </div>
+            
+                <?php
+                $Prenomspost = array("Prenompost","Barack ","Prenom");
+                $Nomspost = array("Nompost","Obama",'Nom');
+                $Date_heures = array("10/10/2021","10/10/2021","10/10/2021");
+                $profiles = array('images/profile-pic.png','images/Obama.jpg','images/profile-pic.png');
+                $images = array('images/feed-image-1.png','images/Axel.jpg','images/tupac.jpg');
+                $Posts = array('WoWOWOWOWOWOWOWOWOWOW il se passe quoi ici ?????? <span>@DonaldTrump</span> 
+                <a href="#">#incroyable</a> <a href="#">#AllezParis</a>','Fuck <span>@AxelBattut</span> et sa clique
+                <a href="#">#fuckyoubro</a> <a href="#">#Codepromoksdevincipourvoscommandesstackinsats</a>','Tupac me manque
+                <a href="#">#CaliforniaLove</a> <a href="#">#Westcoastbro</a> ');
+                function writePost($Prenompost,$Nompost,$Date_heure,$Post,$image,$profile)
+                {
+                    
+                    echo "<div class='post-container'>
+                    <div class='user-profile'>
+                <img src=$profile>
+                <div>
+                    <p> $Prenompost $Nompost</p>
+                    <span>$Date_heure</span>
                 </div>
-                <p class = "post-text"> WoWOWOWOWOWOWOWOWOWOW il se passe quoi ici ?????? <span>@DonaldTrump</span> 
-                    <a href="#">#incroyable</a> <a href="#">#AllezParis</a> 
+            </div>
+                
+                
+                <p class = 'post-text'>$Post 
                 </p>
-                <img src="images/feed-image-1.png" class="post-img">
-                <div class="post-row">
-                    <div class="activity-icons">
-                            <div><img src="images/like-blue.png" >nlikes</div>
-                            <div><img src="images/comments.png" >ncom</div>
-                            <div><img src="images/share.png" >nshare</div>
+                <img src=$image class='post-img'>
+                <div class='post-row'>
+                    <div class='activity-icons'>
+                            <div><img src='images/like-blue.png' >nlikes</div>
+                            <div><img src='images/comments.png' >ncom</div>
+                            <div><img src='images/share.png' >nshare</div>
                             
                     </div>
                     
                 </div>
-            
-            
-            </div>
-            <div class="post-container">
-                <div class="user-profile">
-                    <img src="images/Obama.jpg">
-                    <div>
-                        <p>Barack Obama</p>
-                        <span>Date heure</span>
-                    </div>
-                </div>
-                <p class = "post-text"> Fuck <span>@AxelBattut</span> et sa clique
-                    <a href="#">#fuckyoubro</a> <a href="#">#Codepromoksdevincipourvoscommandesstackinsats</a> 
-                </p>
-                <img src="images/Axel.jpg" class="post-img">
-                <div class="post-row">
-                    <div class="activity-icons">
-                            <div><img src="images/like-blue.png" >nlikes</div>
-                            <div><img src="images/comments.png" >ncom</div>
-                            <div><img src="images/share.png" >nshare</div>
-                            
-                    </div>
+                </div>"
+                ;
+                }
+                for($i = 0; $i<count($Prenomspost); $i++)
+                {
                     
-                </div>
+                    writePost($Prenomspost[$i],$Nomspost[$i],$Date_heures[$i],$Posts[$i],$images[$i],$profiles[$i]);
+                }
+                
+                ?>
+                
             
             
-            </div>
+            
+            
             <div class="post-container">
                 <div class="user-profile">
-                    <img src="images/profile-pic.png">
+                    <img src="">
                     <div>
-                        <p>Prenompost Nompost</p>
+                        <p></p>
                         <span>Date heure</span>
                     </div>
                 </div>
-                <p class = "post-text"> Tupac me manque
-                    <a href="#">#CaliforniaLove</a> <a href="#">#Westcoastbro</a> 
+                <p class = "post-text"> 
                 </p>
-                <img src="images/tupac.jpg" class="post-img">
+                <img src="" class="post-img">
                 <div class="post-row">
                     <div class="activity-icons">
                             <div><img src="images/like-blue.png" >nlikes</div>
