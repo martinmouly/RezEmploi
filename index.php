@@ -30,7 +30,7 @@ CloseCon($conn);
             <ul>
                 <li><img src = "images/notification.png" ></li>
                 <li><img src = "images/inbox.png" ></li>
-                <li><img src = "images/job.png" ></li>
+                <li><img src = "images/job.png" onClick="document.location.href='jobs.html'"></li>
               </ul>
         
         </div>
@@ -40,7 +40,7 @@ CloseCon($conn);
                 <input type ="text" placeholder = "Search">
             </div>
             <div class = "nav-user-icon">
-                <a onclick="getProfile()">
+                <a onClick="document.location.href='profile.php'">
                     <img src = "images/profile-pic.png" >
                 </a>
 
@@ -96,7 +96,7 @@ CloseCon($conn);
                 <a href="#">#CaliforniaLove</a> <a href="#">#Westcoastbro</a> ');
                 function writePost($Prenompost,$Nompost,$Date_heure,$Post,$image,$profile)
                 {
-                    
+                    echo $profile;
                     echo "<div class='post-container'>
                     <div class='user-profile'>
                 <img src=$profile>

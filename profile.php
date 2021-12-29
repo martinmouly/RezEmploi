@@ -45,66 +45,58 @@
         </div>
         <div class="main-content"id = "centerprofile">
             <?php
-            <div class="info-profile">
-                
-                <img src="images/vitalik.jpg" >
-                
-                <div>
-                    <h4>Vitalik Buterin</h4>
-                    <p>ethereum co-founder, met Axel Battut in july 2021</p>
+            $nom ='Buterin ';
+            $prenom = 'vitalik';
+            $pp = 'images/vitalik.jpg';
+            $small_description ='ethereum co-founder, met Axel Battut in july 2021';
+            $more1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni";
+            $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016');
+            $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014');
+            $experiences = array($experience1,$experience2);
+            // info profile 
+            echo "<div class='info-profile'>               
+                    <img src= '$pp' >                
                     <div>
-                        <button id="contact" onclick="goChat()"> Contacter</button>
-                        
-
-                    <button>Ajouter en ami</button>
-
+                        <h4>$prenom $nom</h4>
+                        <p>$small_description</p>
+                            <div>
+                                <button id='contact' onclick='goChat()'> Contacter</button>
+                                <button>'Ajouter en ami'</button>
+                            </div>
                     </div>
-                    
-
-                </div>
-
+                </div>";
+                // display one experience
+            function affExp($experience)
+            {
+                echo "
                 
-                
-                
-            </div>
             <h4>Experience</h4>
-            <div class="exp">
-            <div class="info-profile">
+            <div class='exp'>
+            <div class='info-profile'>
                 
-                <img src="images/ethereum.png" id="compagny" >
+                <img src={$experience['logo']} id='compagny' >
                 
                 <div>
                     
-                    <h4>Founder of ethereum</h4>
-                    <h6>Cryptomonnaies</h6>
-                    <h5>2014 -</h5>
+                    <h4>{$experience['title']}</h4>
+                    <h6>{$experience['field']}</h6>
+                    <h5>{$experience['date']}</h5>
                     
                     </div>
                     
 
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni</p>
-            <h6>added on the : 10/12/2016 </h6>
+                <p>{$experience['more']}</p>
+            <h6>added on the :{$experience['date']}  </h6>
             </div>
-            <div class="exp">
-                <div class="info-profile">
-                    
-                    <img src="images/bitcoin.png" id="compagny" >
-                    
-                    <div>
-                        
-                        <h4>bitcoin core contributor</h4>
-                        <h6>Cryptomonnaies</h6>
-                        <h5>2012-2015</h5>
-                        
-                        </div>
-                        
-    
-                    </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni</p>
-                    <h6>added on the : 10/12/2016 </h6>
-                </div>
-            
+            ";}
+            // display all experiences 
+            function affAllExp($experiences){
+                foreach ($experiences as $exp){
+                    affExp($exp);
+                }
+            }
+            affAllExp($experiences);
             ?>
             
         </div>
