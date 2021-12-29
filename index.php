@@ -53,7 +53,7 @@ CloseCon($conn);
         <div class="left-sidebar">
             <div class="imp-links">
                 <a href="#"><img src = "images/news.png">News</a>
-                <a href="#"><img src = "images/friends.png">Friends</a>
+                <a href="#"><img src = "images/friends.png" onclick="location.href='listppl.html'">Friends</a>
                 <a href="#"><img src = "images/group.png">Group</a>
                 <a href="#"><img src = "images/watch.png">watch</a>
 
