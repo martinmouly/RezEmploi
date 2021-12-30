@@ -1,16 +1,4 @@
-<?php
-define("WEBROOT",dirname(__FILE__));
-define("ROOT",dirname(WEBROOT));
-define('DS',DIRECTORY_SEPARATOR);
-define('BASE_URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
 
-
-include 'db_con.php';
-
-$conn = OpenCon();
-CloseCon($conn);
-
-?>
 <!DOCTYPE html>
 <?php
 
@@ -18,7 +6,6 @@ CloseCon($conn);
 <head>
     <meta charset="utf-8">
     
-    <link rel="stylesheet" type="text/css" href="exemple.css">
     <title>Social Network</title>
     <link rel = "stylesheet" href = "stylehome.css">
     <link rel = "stylesheet" href = "styleside.css">
@@ -38,7 +25,10 @@ CloseCon($conn);
         <div class="main-content">
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="images/profile-pic.png">
+                    <a href = "profile.php?id=1">
+        
+                    <img src="images/profile-pic.png" >
+                    </a>
                     <?php
                     $Prenom = "Axel";
                     $Nom = "Battut";

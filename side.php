@@ -8,7 +8,9 @@ class Side{
             <img src = 'images/logo.png' class = 'logo'>
             <ul>
                 <li><img src = 'images/notification.png' ></li>
+                <a href = 'messagerie.php'>
                 <li><img src = 'images/inbox.png' ></li>
+                </a>
                 <li><img src = 'images/job.png'onClick=`window.location.href='jobs.php'`></li>
               </ul>
         
