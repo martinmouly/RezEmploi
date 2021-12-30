@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -85,13 +88,14 @@
 
               function printChatHeader($chat1)
               {
+                echo
                   "
             <div class="chat-header">
 				<div class="profile">
 					<div class="left">
-						<img src="img/arrow.png" class="arrow">
+						<img src={$chat1->$get_picture_profile_user()} class="arrow">
 						<img src="img/pp.png" class="pp">
-						<h2>Elias</h2>
+						<h2>{$chat1->$get_name_user()}</h2>
 						<span>online</span>
 					</div>
 					<div class="right">
