@@ -71,7 +71,7 @@ nav{
 }
 .left-sidebar{
    
-    flex-basis:25%;
+    flex-basis:15%;
     position: sticky;
     top: 70px;
     align-self: flex-start;
@@ -85,7 +85,7 @@ nav{
 }
 .right-sidebar{
     background: #fff;
-    flex-basis:25%;
+    flex-basis:15%;
     position: sticky;
     top: 70px;
     align-self: flex-start;
@@ -95,7 +95,7 @@ nav{
     
 }
 .main-content{
-    flex-basis: 47%;
+    flex-basis: 65%;
 }
 .imp-links a {
     text-decoration:none ;
