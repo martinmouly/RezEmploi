@@ -27,6 +27,31 @@
             $profile1 = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
             $profile2 = new Person(2,"juknk","njkn",$pp,$small_description,array($experience1,$experience2));
             $profiles = array($profile1,$profile2);
+
+            include 'index.php'; //connection db
+            $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,photo, idcv,ip) VALUES (0, null, null,'$nom','$prenom','$pp','$ipaddress')";
+
+            $query = sprintf("SELECT * FROM users WHERE id=1 ",
+            // Exécution de la requête
+            $result = mysql_query($query);
+
+            
+            // Vérification du résultat si erreur
+            
+            if (!$result) {
+                $message  = 'Requête invalide : ' . mysql_error() . "\n";
+                $message .= 'Requête complète : ' . $query;
+                die($message);
+            }
+
+            //test d'affichage des results
+            while ($row = mysql_fetch_assoc($result)) {
+                echo $row['id'];
+                echo $row['nom'];
+                echo $row['prenom'];
+                
+            }
+
             if (PHP_SAPI === 'cli') {
                 $id = $argv[1];
                 
