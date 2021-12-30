@@ -1,5 +1,5 @@
 <?php
-define("WEBROOT",dirname(__FILE__));
+define("WEBROOT",dirname(__dbtest__)); //previously __FILE__
 define("ROOT",dirname(WEBROOT));
 define('DS',DIRECTORY_SEPARATOR);
 define('BASE_URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
