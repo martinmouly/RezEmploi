@@ -45,6 +45,7 @@
         </div>
         <div class="main-content"id = "centerprofile">
             <?php
+            include("Person.php");
             $nom ='Buterin ';
             $prenom = 'vitalik';
             $pp = 'images/vitalik.jpg';
@@ -52,19 +53,40 @@
             $more1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni";
             $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016');
             $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014');
-            $experiences = array($experience1,$experience2);
+            $profile1 = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
+            $profile2 = new Person(2,"juknk","njkn",$pp,$small_description,array($experience1,$experience2));
+            $profiles = array($profile1,$profile2);
+            if (PHP_SAPI === 'cli') {
+                $id = $argv[1];
+                
+            }
+            else {
+                $idSelect = $_GET['id'];
+                
+            }
+            echo $idSelect;
+            $perso = $profiles[$idSelect];
+
+           
+
             // info profile 
-            echo "<div class='info-profile'>               
-                    <img src= '$pp' >                
+            function getDescription($perso)
+            {echo "<div class='info-profile'>               
+                    <img src= '{$perso->get_pp()}' >                
                     <div>
-                        <h4>$prenom $nom</h4>
-                        <p>$small_description</p>
+                        <h4>{$perso->get_prenom()} {$perso->get_nom()}</h4>
+                        <p>{$perso->get_small_description()}</p>
                             <div>
                                 <button id='contact' onclick='goChat()'> Contacter</button>
                                 <button>'Ajouter en ami'</button>
                             </div>
                     </div>
                 </div>";
+                $experiences = $perso->get_listexp();
+                foreach ($experiences as $exp){
+                    affExp($exp);
+                }
+            }
                 // display one experience
             function affExp($experience)
             {
@@ -90,13 +112,10 @@
             <h6>added on the :{$experience['date']}  </h6>
             </div>
             ";}
+             getDescription($perso);
             // display all experiences 
-            function affAllExp($experiences){
-                foreach ($experiences as $exp){
-                    affExp($exp);
-                }
-            }
-            affAllExp($experiences);
+           
+            
             ?>
             
         </div>
