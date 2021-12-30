@@ -45,7 +45,7 @@ nav{
 .nav-user-icon{
     margin: left 30px;
 }
-.search-box{
+.search-box  {
     background :#efefef;
     width: 350px;
     border-radius: 20px;
@@ -54,8 +54,8 @@ nav{
     padding: 0 15px;
     margin-right: 10px;
 }
-.search-box img {
-    width: 18 px;
+.imsearch {
+    width: 18px;
 }
 .search-box input{
     width: 100%;

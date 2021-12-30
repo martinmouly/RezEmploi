@@ -19,7 +19,7 @@ class Person {
                     
             }
             function get_id() {
-                return $this->nom;
+                return $this->id;
               }
             function get_nom() {
                 return $this->nom;
@@ -35,6 +35,11 @@ class Person {
               }
               function get_listexp() {
                 return $this->listexp;
+              }
+              function get_info(){
+                return array($this->id,$this->nom,$this->prenom,$this->pp);
+                
+
               }
               function getDescription()
             {echo "<div class='info-profile'>               

@@ -16,10 +16,19 @@ class Side{
         
         </div>
         <div class = 'nav-right'>
-            <div class ='search-box'>
-                <img src = 'images/search.png'>
-                <input type ='text' placeholder = 'Search'>
-            </div>
+            
+            <form class ='search-box' action='listppl.php' method='post'>
+                
+                
+                <input type ='text' placeholder = 'Search' name='keyword'>
+                <input type='submit'>
+            </form>";
+            if(isset($_POST['keyword']))
+        {		
+        $_POST['keyword'];
+        }
+            echo"
+            
             <div class = 'nav-user-icon'>
                 <a onclick='UpdateStatus()' value='Status Update'>
                     <img src = 'images/profile-pic.png' >
