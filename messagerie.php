@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" type="text/css" href="exemple.css">
+    <title>Social Network</title>
+    <link href="Messagerie.css" rel="stylesheet" type="text/css">
+    <link rel = "stylesheet" href = "styleside.css">
+    <script src="webroot/js/functions.js"></script>
+</head>
+<body>
+    <nav>
+        <div class = "nav-left">
+            <img src = "images/logo.png" class = "logo">
+            <ul>
+                <li><img src = "images/notification.png" ></li>
+                <li><img src = "images/inbox.png" onclick="location.href='messagerie.html'"></li>
+                <li><img src = "images/job.png" onclick="location.href='jobs.html'"></li>
+              </ul>
+        
+        </div>
+        <div class = "nav-right">
+            <div class ="search-box">
+                <img src = "images/search.png">
+                <input type ="text" placeholder = "Search">
+            </div>
+            <div class = "nav-user-icon">
+                <a onclick="getProfile()">
+                    <img src = "images/profile-pic.png" >
+                </a>
+
+                
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a href="#"><img src = "images/news.png">News</a>
+                <a href="#"><img src = "images/friends.png" onclick="location.href='listppl.html'">Friends</a>
+                <a href="#"><img src = "images/group.png">Group</a>
+                <a href="#"><img src = "images/watch.png">watch</a>
+
+            </div>
+
+        </div>
+        <div class="main-content">
+            
+
+	<div class="container">
+		<div class="chat">
+        <?php
+            class Lechat{
+                public $picture_profile_user;
+                public $name_user;
+                public $status_user ;
+                public $text1 ;
+
+
+                function __construct($picture_profile_user, $name_user,$status_user,$text1) {
+                    $this->picture_profile_user = $picture_profile_user;
+                    $this->name_user = $name_user;
+                    $this->status_user = $status_user;
+                    $this->text1 = $text1;
+            }
+            function get_picture_profile_user() {
+                return $this->picture_profile_user;
+            }
+            function get_name_user() {
+                return $this->name_user;
+              }
+              function get_status_user() {
+                return $this->status_user;
+              }
+              function get_text1() {
+                return $this->text1;
+              }
+
+              $picture_profile_user = "img/pp.png";
+              $name_user = "Elias";
+              $status_user = "Online";
+              $text1 = "Hi Elias";
+              $chat1 = new Lechat($picture_profile_user,$name_user,$status_user,$text1);
+
+              function printChatHeader($chat1)
+              {
+                  "
+            <div class="chat-header">
+				<div class="profile">
+					<div class="left">
+						<img src="img/arrow.png" class="arrow">
+						<img src="img/pp.png" class="pp">
+						<h2>Elias</h2>
+						<span>online</span>
+					</div>
+					<div class="right">
+						<img src="img/video.png" class="icon">
+						<img src="img/phone.png" class="icon">
+						<img src="img/more.png" class="icon">
+					</div>
+				</div>
+			</div>
+                  "
+
+                  for($u =0;$u<10;$u+=1){
+                    printChatHeader($chat1);
+              }
+        
+        
+        ?>
+
+			
+			<div class="chat-box">
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<p><img src="img/emoji-1.png" class="emoji">
+                            Hi, Elias
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+							<img src="img/check-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="chat-l">
+					<div class="mess">
+						<p>
+                            Oh! hi <img src="img/emoji-2.png" class="emoji">
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<p>
+                           How are you doing?
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+							<img src="img/check-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="chat-l">
+					<div class="mess">
+					    <p>I'm doing alright. How about you?</p>
+						<div class="check">
+							<span>4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<p>
+                           Not too bad. The weather is great isn't it?
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+							<img src="img/check-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="chat-l">
+					<div class="mess">
+						<p>
+                            Yes. It's absolutely beautiful today.
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<img src="img/post2.jpg" class="img_chat">
+						<div class="check">
+							<span>4:00 PM</span>
+							<img src="img/check-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<p>I wish it was like this more frequently.</p>
+						<div class="check">
+							<span>4:00 PM</span>
+							<img src="img/check-2.png">
+						</div>
+					</div>
+				</div>
+				<div class="chat-l">
+					<div class="mess">
+						<p>
+                           Me too. <img src="img/heart.png"  class="emoji">
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+						</div>
+					</div>
+					<div class="sp"></div>
+				</div>
+				<div class="chat-r">
+					<div class="sp"></div>
+					<div class="mess mess-r">
+						<p>
+                           So where are you going now?
+						</p>
+						<div class="check">
+							<span>4:00 PM</span>
+							<img src="img/check-1.png">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+            
+
+			<div class="chat-footer">
+				<img src="img/emo.png" class="emo">
+				<textarea placeholder="Type a message"></textarea>
+				<div class="icons">
+					<img src="img/attach file.png">
+					<img src="img/camera.png">
+				</div>
+				<img src="img/mic.png" class="mic">
+			</div>
+		
+            </div>
+            
+	</div>
+	
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="right-sidebar">
+            <div class="sidebar-title">
+                <h4>Events</h4>
+                <a href = "#">See All</a>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+                <div class="rightleft-event">
+                    <h4>Event 1 </h4>
+                    <p>description</p>
+                    <a href="#">More info</a>
+                </div>
+            </div>
+            <div class="sidebar-title">
+                <h4>Publicité</h4>
+                <a href = "#">close</a>
+            </div>
+            <img src="images/advertisement.png" class="sidebar-ads">
+            <div class="sidebar-title">
+                <h4>Conversation</h4>
+                <a href = "#">hide chat</a>
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="images/member-1.png" >
+                </div>
+                <p>Prenom Nom</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="images/member-2.png" >
+                </div>
+                <p>Prenom2 Nom2</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="images/member-3.png" >
+                </div>
+                <p>Prenom3 Nom3</p>
+            </div>
+
+        </div>
+        
+    </div>
+</body>
+<html>
