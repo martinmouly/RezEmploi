@@ -64,58 +64,9 @@
                 $idSelect = $_GET['id'];
                 
             }
-            echo $idSelect;
             $perso = $profiles[$idSelect];
-
-           
-
-            // info profile 
-            function getDescription($perso)
-            {echo "<div class='info-profile'>               
-                    <img src= '{$perso->get_pp()}' >                
-                    <div>
-                        <h4>{$perso->get_prenom()} {$perso->get_nom()}</h4>
-                        <p>{$perso->get_small_description()}</p>
-                            <div>
-                                <button id='contact' onclick='goChat()'> Contacter</button>
-                                <button>'Ajouter en ami'</button>
-                            </div>
-                    </div>
-                </div>";
-                $experiences = $perso->get_listexp();
-                foreach ($experiences as $exp){
-                    affExp($exp);
-                }
-            }
-                // display one experience
-            function affExp($experience)
-            {
-                echo "
-                
-            <h4>Experience</h4>
-            <div class='exp'>
-            <div class='info-profile'>
-                
-                <img src={$experience['logo']} id='compagny' >
-                
-                <div>
-                    
-                    <h4>{$experience['title']}</h4>
-                    <h6>{$experience['field']}</h6>
-                    <h5>{$experience['date']}</h5>
-                    
-                    </div>
-                    
-
-                </div>
-                <p>{$experience['more']}</p>
-            <h6>added on the :{$experience['date']}  </h6>
-            </div>
-            ";}
-             getDescription($perso);
-            // display all experiences 
-           
-            
+            //display all in the Person class
+            $perso->getDescription();
             ?>
             
         </div>

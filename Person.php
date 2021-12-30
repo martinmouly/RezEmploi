@@ -36,5 +36,47 @@ class Person {
               function get_listexp() {
                 return $this->listexp;
               }
+              function getDescription()
+            {echo "<div class='info-profile'>               
+                    <img src= '{$this->get_pp()}' >                
+                    <div>
+                        <h4>{$this->get_prenom()} {$this->get_nom()}</h4>
+                        <p>{$this->get_small_description()}</p>
+                            <div>
+                                <button id='contact' onclick='goChat()'> Contacter</button>
+                                <button>'Ajouter en ami'</button>
+                            </div>
+                    </div>
+                </div>";
+                $experiences = $this->get_listexp();
+                foreach ($experiences as $exp){
+                    $this->affExp($exp);
+                }
+            }
+                // display one experience
+            function affExp($experience)
+            {
+                echo "
+                
+            <h4>Experience</h4>
+            <div class='exp'>
+            <div class='info-profile'>
+                
+                <img src={$experience['logo']} id='compagny' >
+                
+                <div>
+                    
+                    <h4>{$experience['title']}</h4>
+                    <h6>{$experience['field']}</h6>
+                    <h5>{$experience['date']}</h5>
+                    
+                    </div>
+                    
+
+                </div>
+                <p>{$experience['more']}</p>
+            <h6>added on the :{$experience['date']}  </h6>
+            </div>
+            ";}
 }
  ?>
