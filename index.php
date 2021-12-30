@@ -6,6 +6,7 @@ define('BASE_URL',dirname(dirname($_SERVER['SCRIPT_NAME'])));
 
 
 include 'db_con.php';
+
 $conn = OpenCon();
 CloseCon($conn);
 

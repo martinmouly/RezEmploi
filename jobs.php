@@ -8,12 +8,14 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <meta charset="utf-8">
-    <script src="webroot/js/functions.js"></script>
+    <script src="functions.js" type="text/JavaScript"></script>
    <title>Social Network</title>
     <link rel = "stylesheet" href = "styleside.css">
     <link rel = "stylesheet" href = "stylejobs.css">
+    
 </head>
 <body>
+    <p id = "ui"></p>
     <nav>
         <div class = "nav-left">
             <img src = "images/logo.png" class = "logo"onclick="location.href='index.php'">
@@ -53,86 +55,38 @@
         <div class="job-ads">
             
             <?php
-            class Annonce{
-                public $job_title;
-                public $compagny;
-                public $logo ;
-                public $text ;
-                function __construct($job_title, $compagny,$logo,$text) {
-                    $this->job_title = $job_title;
-                    $this->compagny = $compagny;
-                    $this->logo = $logo;
-                    $this->text = $text;
-            }
-            function get_job_title() {
-                return $this->job_title;
-              }
-              function get_compagny() {
-                return $this->compagny;
-              }
-              function get_logo() {
-                return $this->logo;
-              }
-              function get_text() {
-                return $this->text;
-              }
-              function get_small_text(){
-                  
-                return substr($this->text,0,100) . "...";
-              }
-            }
+            $_SESSION['txtJob']="";
+            include("Annonce.php");
             $job_title = "job title";
             $compagny = "Avalanche";
             $logo = "images/avalanche.png";
             $text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-            $annonce1 = new Annonce($job_title,$compagny,$logo,$text);
-            echo "<div class='listannonces'>";
-            function printOneAd($annonce)
-            {
-                // onclick =getAll($txt)
-                $txt = printDescription($annonce);
-                echo
-            "
+            $annonce1 = new Annonce(1,$job_title,$compagny,$logo,$text);
             
-                <div class='small-ad' >
-                    <div>
-                        <img src={$annonce->get_logo()}  class='brand-logo'>
-                        <span>
-                            <h4>{$annonce->get_job_title()} </h4>
-                            <h5>{$annonce->get_compagny()}</h5>
-                        </span>
-                        
-                        
-                    </div>
-                    <p>{$annonce->get_small_text()}</p>
-           
-                </div>"
-                ;}
+            echo "<div class='listannonces'>";
+            
                  for($u =0;$u<10;$u+=1){
-                     printOneAd($annonce1);
+                     
+                    $annonce1->printOneAd();
+                    echo "</button>";
                  }
-                echo "</div>";
-                function printDescription($annonce)
-                {return "
-                <div>
-                    <img src={$annonce->get_logo()}  class='brand-logo'>
-                    <span>
-                        <h4>{$annonce->get_job_title()} </h4>
-                        <h5>{$annonce->get_compagny()}</h5>
-                    </span>
-                    
-                    
-                </div>
-                <p>{$annonce->get_text()}</p>
-       
-            ";}
+            echo "</div>";
+            
+            $txt =$_SESSION['txtJob'];
+            echo $txt;
+            echo 
+            "<div class='full-ad-job' id ='full'>
+              $txt
+            <div>";
+
             
                 ?>
+                </div></div>
                 
             
             
 
-        </div>
+        
 
         <div class="right-sidebar" id = "cprofile">
             <div class="sidebar-title">
