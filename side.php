@@ -9,7 +9,7 @@ class Side{
             <ul>
                 <li><img src = 'images/notification.png' ></li>
                 <li><img src = 'images/inbox.png' ></li>
-                <li><img src = 'images/job.png'onClick=`document.location.href='jobs.html'`></li>
+                <li><img src = 'images/job.png'onClick=`window.location.href='jobs.php'`></li>
               </ul>
         
         </div>

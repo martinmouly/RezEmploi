@@ -11,16 +11,16 @@
 .chat {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
-	background: #f1f0e8;
+	height: 80vh;
+	background: #e8f1e9;
 }
 .chat-header {
 	display: flex;
 	cursor: pointer;
 }
 .profile {
-	width: 100%;
-	background: #1876f2;
+	width: 700px;
+	background: rgba(43, 118, 143, 0.6);
 	display: flex;
 	align-items: center;
 	height: 60px;

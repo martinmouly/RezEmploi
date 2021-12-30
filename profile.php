@@ -40,7 +40,7 @@
             $perso->getDescription();
             ?>  
         </div>
-        <?php $side->left();?>
+        <?php $side->right();?>
         
     </div>
 </body>
