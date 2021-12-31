@@ -38,26 +38,39 @@
             $compagny = "Avalanche";
             $logo = "images/avalanche.png";
             $text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-            $annonce1 = new Annonce(1,$job_title,$compagny,$logo,$text);
+            $annonce1 = new Annonce(0,$job_title,$compagny,$logo,$text);
+            $annonce2 = new Annonce(1,$job_title,$compagny,$logo,$text);
+            $annonce3 = new Annonce(2,$job_title,$compagny,"images/bitcoin.png",$text);
+            $annonce4 = new Annonce(3,$job_title,$compagny,$logo,$text);
+            $annonce5 = new Annonce(4,$job_title,$compagny,$logo,$text);
+            $annonce6 = new Annonce(5,$job_title,$compagny,$logo,$text);
+            $annonce7 = new Annonce(6,$job_title,$compagny,$logo,$text);
+            $annonces =array($annonce1,$annonce2,$annonce3,$annonce4,$annonce5,$annonce6,$annonce7);
             
-            echo "<div class='listannonces'>";
+            echo "<form class='listannonces'method='post'>";
             
-                 for($u =0;$u<10;$u+=1){
+                 foreach($annonces as $an){
                      
-                    $annonce1->printOneAd();
+                    $an->printOneAd();
                     echo "</button>";
                  }
-            echo "</div>";
+            echo "</form>";
             
-            $txt =$_SESSION['txtJob'];
-            echo $txt;
-            echo 
-            "<div class='full-ad-job' id ='full'>
-              $txt
-            <div>";
+            
+            ?>
+            <div class='full-ad-job' id ='full'>
+              <?php
+              for($i = 0; $i<count($annonces); $i++)
+              {
+                  if(isset($_POST["b{$i}"])) {
+                      echo $annonces[$i]->printDescription();
+                  }
+               }
+              ?>
+            <div>
 
             
-                ?>
+                
                 </div></div>
                 
             

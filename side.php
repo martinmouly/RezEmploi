@@ -38,10 +38,7 @@ class Side{
                 <input type ='text' placeholder = 'Search' name='keyword'>
                 <input type='submit'>
             </form>";
-            if(isset($_POST['keyword']))
-        {		
-        $_POST['keyword'];
-        }
+            
             echo"
             
             <div class = 'nav-user-icon'>

@@ -33,28 +33,10 @@ class Annonce{
               }
               function printOneAd()
             {
-                $txt =$this->printDescription();
-               $_SESSION['JobId'.$this->id] = $txt;
-            //    echo 
-            //    "<script type='text/javascript'>
-            //    function fetch_select(val)
-            //    {
-            //     $.ajax({
-            //     type: 'post',
-            //     url: 'fetch_data.php',
-            //     data: {
-            //      get_option:val
-            //     },
-            //     success: function (response) {
-            //      document.getElementById('new_select').innerHTML=response; 
-            //     }
-            //     });
-            //    }
                
-            //    </script>";
                 $p='JobId'.$this->id;
                 echo
-                "<button type='button'>
+                "<button type='input' name = 'b{$this->id}' >
                     <div class='small-ad' >
                         <div>
                             <img src={$this->get_logo()}  class='brand-logo'>
@@ -88,22 +70,5 @@ class Annonce{
                 
             }
 
-class ListAnnonce{
-    public $list;
-    public $activeId;
-    function __construct($list,$activeId) {
-        $this->list =$list;
-        $this->activeId = $activeId;
-        
-}
-function get_list() {
-    return $this->job_list;
-  }
-  function get_activeId() {
-    return $this->activeId;
-  }
-  function PrintDescription(){
 
-  }
-}
 ?>
