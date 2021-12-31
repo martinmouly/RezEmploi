@@ -85,18 +85,22 @@
             $message2 = new Message(1,$me,$other,"message 2 de l'autre ",$time2,'other');
             $messages = array($message1,$message2);
             $id = 1; 
-            
-            if (PHP_SAPI === 'cli') {
+            if(isset($_GET['idOther']) && !empty($_GET['idOther']))
+            {
+                if (PHP_SAPI === 'cli') {
                 
                 $idSelect = $argv[1];
                 
-            }
+                }
             else {
                 $idSelect = $_GET['idOther'];
                 
             }
-            $interlocutor = $p[$idSelect];
-            echo $interlocutor->id;
+            $interlocutor = $p[$idSelect+1];
+        }
+            else {
+                $interlocutor =$other;
+            }
             ?>
 			
             
