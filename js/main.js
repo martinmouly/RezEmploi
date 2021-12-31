@@ -24,7 +24,7 @@ sendEthButton.addEventListener('click', () => {
         {
           from: accounts[0],
           to: '0xd5378b06f1fF211597210461480eac0C593C10e9',
-          value: '0.1999999999999999999A',
+          value: '1',
           gasPrice: '0x09184e72a000',
           gas: '0x2710',
         },
