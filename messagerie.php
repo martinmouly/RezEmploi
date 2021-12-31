@@ -16,7 +16,7 @@
     <script src="functions.js" type="text/JavaScript"></script>
    <title>Social Network</title>
     <link rel = "stylesheet" href = "styleside.css">
-    <link rel = "stylesheet" href = "messagerie.css">
+    <link rel = "stylesheet" href = "messageries.css">
     
 </head>
 <body>
@@ -30,11 +30,43 @@
     $side->navbar();
     ?>
     <div class="container">
+    <div class = "contacts">
+    <h4>Conversation</h4>
+    <form method="post">
+    <?php
+    include("Person.php");
+    $prenom = "Prenom";$nom = "Nom";
+    $p = array();
+    function dispContact($perso){
+        echo "<button class='online-list'>
+        <div class='online'>
+            <img src={$perso->pp} >
+        </div>
+        <p>$perso->prenom $perso->nom </p>
+    </button>";
+    }
+    
+    for ($u=0;$u<20;$u++)
+    {
+       
+        array_push($p,new Person($u,$nom.$u,$prenom.$u, 'images/member-2.png',"",NULL));
+        dispContact($p[$u]);
+    }
+
+    ?>
+    
         
+        
+       
+    
+    </form>
+        </div>
+        
+    
         <!-- <?php $side->left();?> -->
         <div class="chat">
             <?php
-            include("Person.php");
+            
             include("Message.php");
             $nom ='Buterin ';
             $prenom = 'vitalik';
@@ -110,6 +142,6 @@
         $side->right();
         ?> -->
         
-    </div> 
+    
 </body>
 <html>

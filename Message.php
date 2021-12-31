@@ -37,7 +37,7 @@ class Message{
               function get_side() {
                 $side = array('<div class="chat-l"><div class="mess">','</div></div><div class="sp"></div></div>');
                 $cho ="moi";
-                if($this->whosent=='other'){
+                if($this->whosent=='me'){
                     $cho ="autre";
                     $side = array('<div class="chat-r"><div class="sp"></div><div class="mess mess-r">','</div></div></div>');
                 }

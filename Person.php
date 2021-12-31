@@ -52,7 +52,8 @@ class Person {
                                 <button>'Ajouter en ami'</button>
                             </div>
                     </div>
-                </div>";
+                </div>
+                <h4>Experience</h4>";
                 $experiences = $this->get_listexp();
                 foreach ($experiences as $exp){
                     $this->affExp($exp);
@@ -63,7 +64,7 @@ class Person {
             {
                 echo "
                 
-            <h4>Experience</h4>
+            
             <div class='exp'>
             <div class='info-profile'>
                 

@@ -5,7 +5,7 @@
 	font-family: sans-serif;
 }
 .container {
-	width: 500px;
+	width: 100%;
 	margin: auto;
 }
 .chat {
@@ -13,14 +13,34 @@
 	flex-direction: column;
 	height: 80vh;
 	background: #e8f1e9;
+	flex-basis:85%;
+}
+.contacts{
+	flex-basis:15%;
+	margin-right: 10px;
+	display : flex;
+	background: rgb(169, 201, 169);
+	border-radius:5px;
+	flex-direction: column;
+	overflow-y: scroll;
+	height: 80vh;
+	
+}
+.contacts form .online-list{
+	/* border:transparent; */
+	border-bottom: 1px;
+	border-right: none;
+	border-top-left-radius: 5px;
+	background:transparent;
 }
 .chat-header {
 	display: flex;
 	cursor: pointer;
+	
 }
 .profile {
-	width: 700px;
-	background: rgba(43, 118, 143, 0.6);
+	width: 100%;
+	background: rgb(43, 118, 143);
 	display: flex;
 	align-items: center;
 	height: 60px;
@@ -101,7 +121,7 @@
 	font-size: 18px;
 }
 .chat-box .mess-r {
-    background: #E2FFC7;
+    background: #99b699;
 }
 .chat-box .emoji {
 	width: 20px;
