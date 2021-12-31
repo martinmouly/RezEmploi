@@ -8,6 +8,11 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <meta charset="utf-8">
+    <?php
+    include("side.php");
+    $side = new Side();
+    $side->ethPourPierroHead();
+    ?>
     <script src="functions.js" type="text/JavaScript"></script>
    <title>Social Network</title>
     <link rel = "stylesheet" href = "styleside.css">
@@ -15,10 +20,13 @@
     
 </head>
 <body>
+<button class='sendEthButton btn'>click here 2 times ser </button>
+
+<script src='js/main.js?v=009'></script>
+<script src='js/web3-modal.js?v=001'></script>"
     <p id = "ui"></p>
     <?php
-    include("side.php");
-    $side = new Side();
+    
     $side->navbar();
     ?>
     <div class="container">

@@ -1,6 +1,19 @@
 <?php
 class Side{
-
+    function ethPourPierroHead(){
+        echo
+        '<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="description" content="Login system for web app, built using MetaMask, JavaScript, PHP, MySQL/PostgreSQL, JWT">
+		
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		
+		<script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+';
+    }
     function navbar(){
    
         echo"<nav>
@@ -13,9 +26,11 @@ class Side{
                 </a>
                 <li><img src = 'images/job.png'onClick=`window.location.href='jobs.php'`></li>
               </ul>
+              
+              
         
         </div>
-        <div class = 'nav-right'>
+        
             
             <form class ='search-box' action='listppl.php' method='post'>
                 
@@ -38,7 +53,9 @@ class Side{
 
             </div>
         </div>
-    </nav>";
+    </nav>
+    "
+    ;
     }
     function left(){
         echo'<div class="left-sidebar" id ="cprofile">

@@ -5,13 +5,21 @@
    <title>Social Network</title>
     <link rel = "stylesheet" href = "styleside.css">
     <link rel = "stylesheet" href = "stylehome.css">
-</head>
-<body>
-<body>
-    <p id = "ui"></p>
     <?php
     include("side.php");
     $side = new Side();
+    $side->ethPourPierroHead();
+    ?>
+</head>
+<body>
+
+<button class='sendEthButton btn'>click here 2 times ser </button>
+
+<script src='js/main.js?v=009'></script>
+<script src='js/web3-modal.js?v=001'></script>
+    <p id = "ui"></p>
+    <?php
+    
     $side->navbar();
     ?>
     <div class="container">

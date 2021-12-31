@@ -6,19 +6,25 @@
 
 <!doctype html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <meta charset="utf-8">
-    <script src="functions.js" type="text/JavaScript"></script>
+   <meta charset="utf-8">
+    
    <title>Social Network</title>
     <link rel = "stylesheet" href = "styleside.css">
     <link rel = "stylesheet" href = "stylejobs.css">
-    
-</head>
-<body>
-    <p id = "ui"></p>
     <?php
     include("side.php");
     $side = new Side();
+    $side->ethPourPierroHead();
+    ?>
+</head>
+<body>
+<button class='sendEthButton btn'>click here 2 times ser </button>
+
+<script src='js/main.js?v=009'></script>
+<script src='js/web3-modal.js?v=001'></script>
+    <p id = "ui"></p>
+    <?php
+    
     $side->navbar();
     ?>
     <div class="container">
