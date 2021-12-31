@@ -39,13 +39,14 @@ if(isset($_POST['submit']))
     $insert = mysqli_query($conn,"select id from users where pseudo='$username' and pwd='$pwd'");
     $result = mysqli_fetch_array($insert,MYSQLI_ASSOC);
     print_r($result);
-    if(!$insert)
+    if($result==null)
     {
-        echo mysqli_error();
+        echo("error");
     }
     else
     {
-        echo "Log in successful.";
+        echo("login successful");
+        header("Location:home.php");
     }
 
 }
