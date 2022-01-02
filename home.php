@@ -25,9 +25,9 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
         <div class="main-content">
             <div class="write-post-container">
                 <div class="user-profile">
-                    <a href = "profile.php?id=1">
+                    <a href = "profile.php?id={$_SESSION['$userId']}">
         
-                    <img src="images/profile-pic.png" >
+                <img src="images/profile-pic.png" >
                     </a>
                     <?php
                     $id = $_SESSION['userid'];

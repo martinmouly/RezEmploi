@@ -15,7 +15,8 @@ pseudo varchar(50),
 pwd varchar(50),
 nom varchar(50),
 prenom varchar(50),
-photo varchar(50)
+pp varchar(50),
+small_description varchar(200)
 );
 
 create table experience(
