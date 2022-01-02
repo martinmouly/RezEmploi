@@ -20,8 +20,10 @@ if(isset($_POST['submit']))
 {		
     $username = $_POST['user'];
     $pwd = $_POST['pass'];
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
 
-    $insert = mysqli_query($conn,"INSERT INTO `users`(`pseudo`, `pwd`) VALUES ('$username','$pwd')");
+    $insert = mysqli_query($conn,"INSERT INTO `users`(`pseudo`, `pwd`,`prenom`,`nom`) VALUES ('$username','$pwd','$prenom','$nom')");
 
     if(!$insert)
     {
@@ -37,8 +39,14 @@ if(isset($_POST['submit']))
 <div class="border-box">
 <h2>New account</h2>
 <input type="text" name="user" placeholder="Enter Username" id="uname"><br/>
+
+<input type="text" name="prenom" placeholder="Enter Prenom" id="prenom"><br/>
+
+<input type="text" name="nom" placeholder="Enter Nom" id="nom"><br/>
  
 <input type="password" name="pass" placeholder="Enter Password" id="upass"><br/>
+
+
  
 <button type="submit" value="Submit" name="submit">Register</button>
 

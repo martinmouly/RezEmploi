@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+include "Person.php";
+session_start();
 // connect to db
 $conn = mysqli_connect('localhost','root','password','dbtest');
 
@@ -35,16 +37,24 @@ if(isset($_POST['submit']))
 {		
     $username = $_POST['user'];
     $pwd = $_POST['pass'];
-
-    $insert = mysqli_query($conn,"select id from users where pseudo='$username' and pwd='$pwd'");
-    $result = mysqli_fetch_array($insert,MYSQLI_ASSOC);
-    print_r($result);
+    $sql = "select id from users where pseudo='$username' and pwd='$pwd'";
+    $result = $conn->query($sql);  
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          echo "id: " . $row["id"];
+          $id=$row["id"];
+        }
+      } else {
+        echo "0 results";
+      }
     if($result==null)
     {
-        echo("error");
+        echo("Utilisateur/Mot de passe incorrect");
     }
     else
-    {
+    {    
+        $_SESSION['userid'] = $id;
         echo("login successful");
         header("Location:home.php");
     }

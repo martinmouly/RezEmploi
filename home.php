@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-
+session_start();
+$conn = mysqli_connect('localhost','root','password','dbtest');
 ?>
 <head>
     <meta charset="utf-8">
@@ -29,8 +30,13 @@
                     <img src="images/profile-pic.png" >
                     </a>
                     <?php
-                    $Prenom = "Axel";
-                    $Nom = "Battut";
+                    $id = $_SESSION['userid'];
+                    $sql = "select prenom,nom from users where id='$id'";
+                    $result = $conn->query($sql);  
+                    while($row = $result->fetch_assoc()) {
+                        $Prenom=$row["prenom"];
+                        $Nom = $row["nom"];
+                      }
 
                     echo "<div><p>$Prenom $Nom</p><small>Public <i class='fas fa-caret-down'></i></small></div>"
                     ?>
