@@ -7,6 +7,31 @@ class Person {
                 public $pp ;
                 public $small_description ;
                 public $listexp;
+
+                // function __construct($id,$conn){
+                  
+                //   $sql = "SELECT * FROM user where id = {$id}";
+                //   $result = $conn->query($sql);
+                //   $row = $result->fetch_assoc();
+                //   foreach(array_keys($row) as $key){
+                //     $this->{$key} = $key;
+                //   }
+                //   $this->listexp = $this->Listexp();
+                // }
+                // function Listexp(){
+                //   $sql = "SELECT * FROM experence where id = {$this->id}";
+                //   $result = $conn->query($sql);
+                //   $row = $result->fetch_assoc();
+                //   $exps = array();
+                //   if ($result->num_rows > 0) {
+                    
+                //     while($row = $result->fetch_assoc()) {
+                      
+                //       array_push($exps,$row);
+                //   }
+                //   return exps;
+                // }
+                // }
                 
                 function __construct($id,$nom,$prenom, $pp,$small_description,$listexp) {
                     $this->id =$id;
