@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
     $prenom = $_POST['prenom'];
     $nom = $_POST['nom'];
 
-    $insert = mysqli_query($conn,"INSERT INTO `users`(`pseudo`, `pwd`,`prenom`,`nom`) VALUES ('$username','$pwd','$prenom','$nom')");
+    $insert = mysqli_query($conn,"INSERT INTO `users`(`pseudo`, `pwd`,`prenom`,`nom`,`pp`) VALUES ('$username','$pwd','$prenom','$nom','images/default.png')");
 
     if(!$insert)
     {

@@ -1,5 +1,6 @@
 
 <?php
+
 class Person {
                 public $id;
                 public $prenom;
@@ -11,21 +12,8 @@ class Person {
                 // function __construct($id,$conn){
                   
                   
-                function __construct(...$args){
-                    if(count($args)==1)
-                  {
-                    $this->id = $args[0];
-                  $sql = "SELECT * FROM user where id = {$this->id}";
-                  $result = $conn->query($sql);
-                  $row = $result->fetch_assoc();
-                  foreach(array_keys($row) as $key){
-                    $this->{$key} = $key;
-                  }
-                  $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016');
-                  $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014');
-                  $this->listexp = array($experience1,$experience2);
-                }
-                  else{
+                function __construct($conn,...$args){
+                    
                     $this->id =$args[0];
                     $this->prenom =$args[1];
                     $this->nom = $args[2];
@@ -33,7 +21,7 @@ class Person {
                     $this->small_description = $args[4];
                     
                     $this->listexp=$args[5];
-                  }
+                  
                 }
                 function Listexp(){
                   $sql = "SELECT * FROM experence where id = {$this->id}";

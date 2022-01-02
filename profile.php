@@ -17,13 +17,17 @@
 <script src='js/main.js?v=009'></script>
 <script src='js/web3-modal.js?v=001'></script>
 <?php
-    
+    $conn = mysqli_connect('localhost','root','password','dbtest');
     $side->navbar();
     ?>
     <div class="container">
     <?php $side->left();?>
         <div class="main-content"id = "centerprofile">
             <?php
+            session_start();
+            $id = $_SESSION['userid'];
+            echo $id;
+
             include("Person.php");
             // $nom ='Buterin ';
             // $prenom = 'vitalik';
@@ -35,8 +39,8 @@
             // $profile1 = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
             // $profile2 = new Person(2,"juknk","njkn",$pp,$small_description,array($experience1,$experience2));
             // $profiles = array($profile1,$profile2);
-            $profile1 = new Person(0);
-            $profile2 = new Person(1);
+            $profile1 = new Person($conn,0);
+            $profile2 = new Person($conn,1);
 
             // include 'index.php'; //connection db
             // $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,photo, idcv,ip) VALUES (0, null, null,'$nom','$prenom','$pp','$ipaddress')";
