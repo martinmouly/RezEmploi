@@ -32,13 +32,23 @@
     <div class="container">
     <div class = "contacts">
     <h4>Conversation</h4>
-    <form method="post">
+    <form method="get">
     <?php
     include("Person.php");
-    $prenom = "Prenom";$nom = "Nom";
-    $p = array();
+    $nom ='Buterin ';
+    $prenom = 'vitalik';
+    $pp = 'images/vitalik.jpg';
+    $small_description ='ethereum co-founder, met Axel Battut in july 2021';
+    $more1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni";
+    $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016');
+    $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014');
+    $me = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
+    $other = new Person(2,"user","other","images/axel.jpg",$small_description,array($experience1,$experience2));
+    $prenom2 = "Prenom";$nom2 = "Nom";
+    $p = array($me,$other);
+    
     function dispContact($perso){
-        echo "<button class='online-list'>
+        echo "<button class='online-list' name = 'idOther' type ='submit' value ={$perso->id}>
         <div class='online'>
             <img src={$perso->pp} >
         </div>
@@ -46,10 +56,10 @@
     </button>";
     }
     
-    for ($u=0;$u<20;$u++)
+    for ($u=1;$u<20;$u++)
     {
        
-        array_push($p,new Person($u,$nom.$u,$prenom.$u, 'images/member-2.png',"",NULL));
+        array_push($p,new Person($u,$nom2.$u,$prenom2.$u, 'images/member-2.png',"",NULL));
         dispContact($p[$u]);
     }
 
@@ -68,20 +78,29 @@
             <?php
             
             include("Message.php");
-            $nom ='Buterin ';
-            $prenom = 'vitalik';
-            $pp = 'images/vitalik.jpg';
-            $small_description ='ethereum co-founder, met Axel Battut in july 2021';
-            $more1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni";
-            $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016');
-            $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014');
-            $me = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
-            $other =$me = new Person(2,"user","other","images/axel.jpg",$small_description,array($experience1,$experience2));
+            
             $time1 = date('d-m-Y', strtotime('-1 week'));
             $message1 = new Message(0,$me,$other,"message 1 de moi ",$time1,'me');
             $time2 = date('d-m-Y', strtotime('-1 week + 1  day'));
             $message2 = new Message(1,$me,$other,"message 2 de l'autre ",$time2,'other');
-            $messages = array($message1,$message2)
+            $messages = array($message1,$message2);
+            $id = 1; 
+            if(isset($_GET['idOther']) && !empty($_GET['idOther']))
+            {
+                if (PHP_SAPI === 'cli') {
+                
+                $idSelect = $argv[1];
+                
+                }
+            else {
+                $idSelect = $_GET['idOther'];
+                
+            }
+            $interlocutor = $p[$idSelect+1];
+        }
+            else {
+                $interlocutor =$other;
+            }
             ?>
 			
             
@@ -94,9 +113,12 @@
 				<div class="profile">
 					<div class="left">
 						<img src="img/arrow2.png" class="arrow">
-						<img src="img/pp.png" class="pp">
-						<h2>Elias</h2>
-						<span>online</span>
+                        <?php
+                        echo "<img src={$interlocutor->pp} class='pp'>
+						<h2>$interlocutor->prenom</h2>";
+                        ?>
+						
+						
 					</div>
 					<div class="right">
 						<img src="img/video2.png" class="icon">
