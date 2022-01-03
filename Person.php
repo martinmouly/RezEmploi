@@ -43,7 +43,7 @@ class Person {
                     $this->small_description = $small_description;
                     
                     $this->listexp=$this->getListexp($id);
-                    print_r($this->listexp);
+                    // print_r($this->listexp);
                     $this->coordonnees = $coordonnees;
                    }
             function getListexp($id){
@@ -60,6 +60,10 @@ class Person {
             } else {
             echo "erre";
             }
+            echo "index 0 des experiences :"
+            echo $exp[0];
+            echo "premier logo :"
+            echo $exp[0]['logo'];
             return $exp;
 
                 }
