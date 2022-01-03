@@ -28,7 +28,7 @@ logo varchar(100),
 title varchar(75),
 field varchar(30),
 more varchar(1000),
-dates datetime,
+dates varchar(50),
 isformation BOOLEAN 
 );
 

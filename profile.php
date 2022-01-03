@@ -24,7 +24,6 @@
     <?php $side->left();?>
         <div class="main-content"id = "centerprofile">
             <?php
-            session_start();
             $id = $_SESSION['userid'];
             // echo $id;
 
@@ -61,7 +60,6 @@
                 }
                 
             } else {
-            echo "erre";
             }
 
 

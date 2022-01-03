@@ -54,16 +54,12 @@ class Person {
             if ($result->num_rows > 0) {
             // output data of each row
                 while($row = $result->fetch_assoc()) {
-                array_push($exp,array("logo"=>$row["logo"], "title"=>$row["title"], "field"=>$row["field"],'date'=>$row["date"],'more'=>$row["more"],'isformation'=>$row["isformation"]));
+                array_push($exp,array("logo"=>$row["logo"], "title"=>$row["title"], "field"=>$row["field"],'date'=>$row["dates"],'more'=>$row["more"],'isformation'=>$row["isformation"]));
                 }
                 
             } else {
             echo "erre";
             }
-            echo "index 0 des experiences :";
-            echo $exp[0];
-            echo "premier logo :";
-            echo $exp[0]['logo'];
             return $exp;
 
                 }
