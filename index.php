@@ -48,7 +48,7 @@ if(isset($_POST['submit']))
       } else {
         echo "0 results";
       }
-    if($result==null)
+    if($id==null)
     {
         echo("Utilisateur/Mot de passe incorrect");
     }
