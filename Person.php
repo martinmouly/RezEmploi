@@ -41,9 +41,26 @@ class Person {
                     $this->pp = $pp;
                     $this->small_description = $small_description;
                     
-                    $this->listexp=$listexp;
+                    $this->listexp=$this->getListexp();
                     $this->coordonnees = $coordonnees;
                    }
+            function getListexp(){
+              $sql = "select * from experience where idcv=$this->id";
+              $result = $conn->query($sql);  
+            if ($result->num_rows > 0) {
+            // output data of each row
+                while($row = $result->fetch_assoc()) {
+                echo "prenom: " . $row["prenom"];
+                $exp = $row;
+                }
+                
+            } else {
+            echo "erreur";
+            }
+            return $exp;
+
+                }
+
             function get_id() {
                 return $this->id;
               }
