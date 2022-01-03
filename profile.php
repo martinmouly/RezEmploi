@@ -56,8 +56,7 @@
             if ($result->num_rows > 0) {
             // output data of each row
                 while($row = $result->fetch_assoc()) {
-                echo "prenom: " . $row["prenom"];
-                echo "nom: " . $row["nom"];
+                
                 $perso = new Person($row['id'],$row['nom'],$row['prenom'],$row['pp'],$row['small_description'],array($experience1,$experience2),$row['coordonnees']);
                 }
                 

@@ -96,11 +96,14 @@
                 $idSelect = $_GET['idOther'];
                 
             }
-            $interlocutor = $p[$idSelect+1];
-        }
-            else {
-                $interlocutor =$other;
+
+            // $interlocutor = $p[$idSelect+1];
             }
+            else {
+                $idSelect=0;
+            }
+            $messages = getAllMessages($idme,$idother);
+            
             ?>
 			
             

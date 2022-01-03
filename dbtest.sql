@@ -41,6 +41,14 @@ id_user int,
 dates DATETIME NOT NULl DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (id_user) REFERENCES users(id)
 );
+create table message(
+id int primary key not null auto_increment,
+me int,
+other int,
+time varchar(40),
+content varchar(1000)
+)
+
 
 
 
