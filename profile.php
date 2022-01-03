@@ -41,30 +41,34 @@
             $profiles = array($profile1,$profile2);
             // $profile1 = new Person($conn,0);
             // $profile2 = new Person($conn,1);
+            $coordonnees = 'tel : 0689564390';
 
-            // include 'index.php'; //connection db
-            // $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,photo, idcv,ip) VALUES (0, null, null,'$nom','$prenom','$pp','$ipaddress')";
+            include 'index.php'; //connection db
+            $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,pp, small_description,coordonnees) VALUES (0, null, null,'$nom','$prenom','$pp','$coordonnees')";
 
-            // $query = sprintf("SELECT * FROM users WHERE id=1 ";
-            // // Exécution de la requête
-            // $result = mysql_query($query);
+            $query = sprintf("SELECT * FROM users WHERE id=1 ";
+            // Exécution de la requête
+            $result = mysql_query($query);
 
             
-            // // Vérification du résultat si erreur
+            // Vérification du résultat si erreur
+            $perso = "";
+            if (!$result) {
+                $message  = 'Requête invalide : ' . mysql_error() . "\n";
+                $message .= 'Requête complète : ' . $query;
+                die($message);
+            }
             
-            // if (!$result) {
-            //     $message  = 'Requête invalide : ' . mysql_error() . "\n";
-            //     $message .= 'Requête complète : ' . $query;
-            //     die($message);
-            // }
-
-            // //test d'affichage des results
-            // while ($row = mysql_fetch_assoc($result)) {
-            //     echo $row['id'];
-            //     echo $row['nom'];
-            //     echo $row['prenom'];
                 
-            // }
+            
+            //test d'affichage des results
+            while ($row = mysql_fetch_assoc($result)) {
+                echo $row['id'];
+                echo $row['nom'];
+                echo $row['prenom'];
+                $perso = new Person($row['id'],$row['nom'],$row['prenom'],$row['pp'],$row['small_description'],array($experience1,$experience2),$row['coordonnees'])
+            }
+
 
             if (PHP_SAPI === 'cli') {
                 $id = $argv[1];
@@ -73,7 +77,7 @@
                 $idSelect = $_GET['id'];
                 
             }
-            $perso = $profiles[$idSelect];
+            // $perso = $profiles[$idSelect];
             //display all in the Person class
             $perso->getDescription();
             ?>  
