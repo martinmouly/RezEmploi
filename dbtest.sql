@@ -16,22 +16,19 @@ pwd varchar(50),
 nom varchar(50),
 prenom varchar(50),
 pp varchar(50),
-small_description varchar(200)
+small_description varchar(200),
+coordonnees varchar(1000),
 );
-create table cv(
-id int primary key not null auto_increment,
-iduser int not null,
-diplome varchar(120),
-coordonnees varchar(1000)
-);
+
 create table experience(
 id int primary key not null auto_increment,
 idcv int not null,
-logo varchar(100)
+logo varchar(100),
 title varchar(75),
 field varchar(30),
 more varchar(1000),
-date = varchar(15)
+date  varchar(15),
+isformation BOOLEAN 
 );
 
 create table post(

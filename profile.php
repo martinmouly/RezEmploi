@@ -25,22 +25,22 @@
         <div class="main-content"id = "centerprofile">
             <?php
             session_start();
-            $id = $_SESSION['userid'];
-            echo $id;
+            // $id = $_SESSION['userid'];
+            // echo $id;
 
             include("Person.php");
-            // $nom ='Buterin ';
-            // $prenom = 'vitalik';
-            // $pp = 'images/vitalik.jpg';
-            // $small_description ='ethereum co-founder, met Axel Battut in july 2021';
-            // $more1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni";
-            // $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016');
-            // $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014');
-            // $profile1 = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
-            // $profile2 = new Person(2,"juknk","njkn",$pp,$small_description,array($experience1,$experience2));
-            // $profiles = array($profile1,$profile2);
-            $profile1 = new Person($conn,0);
-            $profile2 = new Person($conn,1);
+            $nom ='Buterin ';
+            $prenom = 'vitalik';
+            $pp = 'images/vitalik.jpg';
+            $small_description ='ethereum co-founder, met Axel Battut in july 2021';
+            $more1 = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electroni";
+            $experience1 = array("logo"=>'images/ethereum.png', "title"=>'Founder of ethereum', "field"=>"cryptos",'date'=>'2014 -','more'=>$more1,'date'=>'10/12/2016','isformation'=>False);
+            $experience2 = array("logo"=>'images/bitcoin.png', "title"=>'bitcoin contributor', "field"=>"cryptos",'date'=>'2010-2015','more'=>$more1,'date'=>'10/12/2014','isformation'=>True);
+            $profile1 = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2),"tel : 0679887907");
+            $profile2 = new Person(2,"juknk","njkn",$pp,$small_description,array($experience1,$experience2),"tel : 0679edz07 mail : ,kclz,ckl@gmail.com");
+            $profiles = array($profile1,$profile2);
+            // $profile1 = new Person($conn,0);
+            // $profile2 = new Person($conn,1);
 
             // include 'index.php'; //connection db
             // $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,photo, idcv,ip) VALUES (0, null, null,'$nom','$prenom','$pp','$ipaddress')";
@@ -68,7 +68,6 @@
 
             if (PHP_SAPI === 'cli') {
                 $id = $argv[1];
-                
             }
             else {
                 $idSelect = $_GET['id'];

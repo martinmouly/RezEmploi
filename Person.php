@@ -7,6 +7,7 @@ class Person {
                 public $pp ;
                 public $small_description ;
                 public $listexp;
+                public $coordonnees;
 
                 // function __construct($id,$conn){
                   
@@ -33,7 +34,7 @@ class Person {
                 // }
                 // }
                 
-                function __construct($id,$nom,$prenom, $pp,$small_description,$listexp) {
+                function __construct($id,$nom,$prenom, $pp,$small_description,$listexp,$coordonnees) {
                     $this->id =$id;
                     $this->prenom =$prenom;
                     $this->nom = $nom;
@@ -41,8 +42,8 @@ class Person {
                     $this->small_description = $small_description;
                     
                     $this->listexp=$listexp;
-                    
-            }
+                    $this->coordonnees = $coordonnees;
+                   }
             function get_id() {
                 return $this->id;
               }
@@ -72,6 +73,7 @@ class Person {
                     <div>
                         <h4>{$this->get_prenom()} {$this->get_nom()}</h4>
                         <p>{$this->get_small_description()}</p>
+                        <h5>{$this->coordonnees}</h5>
                             <div>
                                 <button id='contact' onclick='goChat()'> Contacter</button>
                                 <button>'Ajouter en ami'</button>
@@ -81,7 +83,13 @@ class Person {
                 <h4>Experience</h4>";
                 $experiences = $this->get_listexp();
                 foreach ($experiences as $exp){
-                    $this->affExp($exp);
+                  if($exp['isformation']==False)
+                    {$this->affExp($exp);}
+                }
+                echo "<h4>Formation</h4>";
+                foreach ($experiences as $exp){
+                  if($exp['isformation']==True)
+                    {$this->affExp($exp);}
                 }
             }
                 // display one experience
