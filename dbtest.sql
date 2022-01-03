@@ -17,12 +17,13 @@ nom varchar(50),
 prenom varchar(50),
 pp varchar(50),
 small_description varchar(200),
-coordonnees varchar(1000),
+coordonnees varchar(1000)
 );
 
 create table experience(
 id int primary key not null auto_increment,
 idcv int not null,
+FOREIGN KEY (idcv) REFERENCES users(id),
 logo varchar(100),
 title varchar(75),
 field varchar(30),

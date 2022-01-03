@@ -1,5 +1,6 @@
 
 <?php
+
 class Person {
                 public $id;
                 public $prenom;
@@ -41,22 +42,23 @@ class Person {
                     $this->pp = $pp;
                     $this->small_description = $small_description;
                     
-                    $this->listexp=$this->getListexp();
+                    $this->listexp=$this->getListexp($id);
+                    print_r($this->listexp);
                     $this->coordonnees = $coordonnees;
                    }
-            function getListexp(){
-              $sql = "select * from experience where idcv=$this->id";
+            function getListexp($id){
+              $conn = mysqli_connect('localhost','root','password','dbtest');
+              $sql = "select * from experience where idcv=$id";
               $result = $conn->query($sql); 
               $exp=array(); 
             if ($result->num_rows > 0) {
             // output data of each row
                 while($row = $result->fetch_assoc()) {
-                echo "prenom: " . $row["prenom"];
-                array_push($exp,$row) ;
+                array_push($exp,array("logo"=>$row["logo"], "title"=>$row["title"], "field"=>$row["field"],'date'=>$row["date"],'more'=>$row["more"],'isformation'=>$row["isformation"]));
                 }
                 
             } else {
-            echo "erreur";
+            echo "erre";
             }
             return $exp;
 
@@ -99,7 +101,7 @@ class Person {
                     </div>
                 </div>
                 <h4>Experience</h4>";
-                $experiences = $this->get_listexp();
+                $experiences = $this->getListexp($this->id);
                 foreach ($experiences as $exp){
                   if($exp['isformation']==False)
                     {$this->affExp($exp);}
