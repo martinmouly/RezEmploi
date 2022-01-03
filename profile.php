@@ -46,7 +46,7 @@
             include 'index.php'; //connection db
             $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,pp, small_description,coordonnees) VALUES (0, null, null,'$nom','$prenom','$pp','$coordonnees')";
 
-            $query = sprintf("SELECT * FROM users WHERE id=1 ";
+            $query = sprintf("SELECT * FROM users WHERE id=0 ";
             // Exécution de la requête
             $result = mysql_query($query);
 
