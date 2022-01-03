@@ -49,6 +49,14 @@ class Side{
                 
 
             </div>
+            <div class = 'logout'>
+                <a href='index.php'>
+                    <img src = 'images/logout.png' >
+                </a>
+
+                
+
+            </div>
         </div>
     </nav>
     "

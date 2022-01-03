@@ -25,9 +25,9 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
         <div class="main-content">
             <div class="write-post-container">
                 <div class="user-profile">
-                    <a href = "profile.php">
+                <a href = "profile.php">
         
-                <img src="images/profile-pic.png" >
+                    <img src="images/profile-pic.png" >
                     </a>
                     <?php
                     $id = $_SESSION['userid'];
@@ -43,11 +43,22 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
                     
                 </div>
                 <div class="post-input-container">
-                    <textarea rows="3" placeholder= "what's on your mind ?"></textarea>
+                   <form method="post">
+                    <textarea rows="3" placeholder= "what's on your mind ?" name='post'></textarea>
                     <div class="add-post-links">
-                        <a href="#"><img src="images/live-video.png" >Live video</a>
-                        <a href="#"><img src="images/photo.png" >photo/video</a>
-                        <a href="#"><img src="images/feeling.png" >feeling</a>
+                        <button type="submit" name="submit" value="Submit">SUBMIT</button><br/>
+                        <?php
+                        if(isset($_POST['submit']))
+                        {		
+                            echo "bvfzeoufhbzofh";
+                            $txt = htmlspecialchars($_POST['post']);
+                            $sql = "insert into post(texte,id_user) values('$txt','$id')";
+                            $result = $conn->query($sql); 
+                            header("Location:home.php");
+    
+                        }
+                        ?>
+                        </form>
                     </div>
                 
                 </div>
