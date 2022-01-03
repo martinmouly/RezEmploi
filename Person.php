@@ -1,6 +1,5 @@
 
 <?php
-
 class Person {
                 public $id;
                 public $prenom;
@@ -11,33 +10,39 @@ class Person {
 
                 // function __construct($id,$conn){
                   
-                  
-                function __construct($conn,...$args){
+                //   $sql = "SELECT * FROM user where id = {$id}";
+                //   $result = $conn->query($sql);
+                //   $row = $result->fetch_assoc();
+                //   foreach(array_keys($row) as $key){
+                //     $this->{$key} = $key;
+                //   }
+                //   $this->listexp = $this->Listexp();
+                // }
+                // function Listexp(){
+                //   $sql = "SELECT * FROM experence where id = {$this->id}";
+                //   $result = $conn->query($sql);
+                //   $row = $result->fetch_assoc();
+                //   $exps = array();
+                //   if ($result->num_rows > 0) {
                     
-                    $this->id =$args[0];
-                    $this->prenom =$args[1];
-                    $this->nom = $args[2];
-                    $this->pp =$args[3];
-                    $this->small_description = $args[4];
-                    
-                    $this->listexp=$args[5];
-                  
-                }
-                function Listexp(){
-                  $sql = "SELECT * FROM experence where id = {$this->id}";
-                  $result = $conn->query($sql);
-                  $row = $result->fetch_assoc();
-                  $exps = array();
-                  if ($result->num_rows > 0) {
-                    
-                    while($row = $result->fetch_assoc()) {
+                //     while($row = $result->fetch_assoc()) {
                       
-                      array_push($exps,$row);
-                  }
-                  return exps;
-                }
-                }
-               
+                //       array_push($exps,$row);
+                //   }
+                //   return exps;
+                // }
+                // }
+                
+                function __construct($id,$nom,$prenom, $pp,$small_description,$listexp) {
+                    $this->id =$id;
+                    $this->prenom =$prenom;
+                    $this->nom = $nom;
+                    $this->pp = $pp;
+                    $this->small_description = $small_description;
+                    
+                    $this->listexp=$listexp;
+                    
+            }
             function get_id() {
                 return $this->id;
               }

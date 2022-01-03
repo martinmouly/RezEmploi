@@ -18,12 +18,20 @@ prenom varchar(50),
 pp varchar(50),
 small_description varchar(200)
 );
-
+create table cv(
+id int primary key not null auto_increment,
+iduser int not null,
+diplome varchar(120),
+coordonnees varchar(1000)
+);
 create table experience(
 id int primary key not null auto_increment,
-formation varchar(1000),
-experience varchar(1000),
-extra varchar(1000)
+idcv int not null,
+logo varchar(100)
+title varchar(75),
+field varchar(30),
+more varchar(1000),
+date = varchar(15)
 );
 
 create table post(

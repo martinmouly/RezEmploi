@@ -1,20 +1,22 @@
 <?php
     class Experience{
         public $id;
-        public $iduser;
+        public $idcv;
         public $logo;
         public $title;
         public $field;
         public $interval;
         public $more;
         public $date;
-        function __constructor($iduser,$logo,$title,$field,$interval){
+        function __constructor($iduser,$logo,$title,$field,$interval,$more,$date){
             $this->id=$id;
             $this->iduser=$iduser;
             $this->logo=$logo;
             $this->title=$title;
             $this->field=$field;
             $this->interval=$interval;
+            $this->more =$more;
+            $this->date =$date
         }
         function get_logo(){
             return $this->logo;
