@@ -21,17 +21,19 @@ if(!$conn){
 </head>
  
 <body>
- 
+
 <div id="container">
 <form method="post" id="flogin">
  
 <div class="border-box">
-<h2>Login Form</h2>
+<h2>Login </h2>
+
 <input type="text" name="user" placeholder="Enter Username" id="uname"><br/>
  
 <input type="password" name="pass" placeholder="Enter Password" id="upass"><br/>
  
-<button type="submit" name="submit" value="Submit">Login</button>
+<button type="submit" name="submit" value="Submit">Login</button><br/>
+<a href="register.php">No account? Register here</a>
 <?php
 if(isset($_POST['submit']))
 {		
@@ -61,7 +63,7 @@ if(isset($_POST['submit']))
 
 }
 ?>
-<a href="register.php">No account? Register here</a>
+
 </div>
 
  
