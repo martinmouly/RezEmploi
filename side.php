@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Side{
     function ethPourPierroHead(){
         echo
@@ -38,12 +39,14 @@ class Side{
                 <input type ='text' placeholder = 'Search' name='keyword'>
                 <input type='submit'>
             </form>";
-            
+
+            $pp =  $_SESSION['photo'];
+            $id =  $_SESSION['userid'];
             echo"
             
             <div class = 'nav-user-icon'>
-                <a onclick='UpdateStatus()' value='Status Update'>
-                    <img src = 'images/profile-pic.png' >
+                <a href='profile.php?id=$id'>
+                    <img src = '$pp' >
                 </a>
 
                 

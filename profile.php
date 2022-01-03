@@ -25,7 +25,7 @@
         <div class="main-content"id = "centerprofile">
             <?php
             session_start();
-            // $id = $_SESSION['userid'];
+            $id = $_SESSION['userid'];
             // echo $id;
 
             include("Person.php");
@@ -43,30 +43,26 @@
             // $profile2 = new Person($conn,1);
             $coordonnees = 'tel : 0689564390';
 
-            include 'index.php'; //connection db
-            $sql = "INSERT INTO users(id,pseudo,pwd,nom,prenom,pp, small_description,coordonnees) VALUES (0, null, null,'$nom','$prenom','$pp','$coordonnees')";
-
-            $query = sprintf("SELECT * FROM users WHERE id=0 ";
-            // Exécution de la requête
-            $result = mysql_query($query);
-
-            
-            // Vérification du résultat si erreur
-            $perso = "";
-            if (!$result) {
-                $message  = 'Requête invalide : ' . mysql_error() . "\n";
-                $message .= 'Requête complète : ' . $query;
-                die($message);
-            }
-            
-                
             
             //test d'affichage des results
-            while ($row = mysql_fetch_assoc($result)) {
-                echo $row['id'];
-                echo $row['nom'];
-                echo $row['prenom'];
-                $perso = new Person($row['id'],$row['nom'],$row['prenom'],$row['pp'],$row['small_description'],array($experience1,$experience2),$row['coordonnees'])
+            // while ($row = mysql_fetch_assoc($result)) {
+            //     echo $row['id'];
+            //     echo $row['nom'];
+            //     echo $row['prenom'];
+            //     $perso = new Person($row['id'],$row['nom'],$row['prenom'],$row['pp'],$row['small_description'],array($experience1,$experience2),$row['coordonnees']);
+            // }
+            $sql = "select * from users where id=$id";
+            $result = $conn->query($sql);  
+            if ($result->num_rows > 0) {
+            // output data of each row
+                while($row = $result->fetch_assoc()) {
+                echo "prenom: " . $row["prenom"];
+                echo "nom: " . $row["nom"];
+                $perso = new Person($row['id'],$row['nom'],$row['prenom'],$row['pp'],$row['small_description'],array($experience1,$experience2),$row['coordonnees']);
+                }
+                
+            } else {
+            echo "erreur";
             }
 
 

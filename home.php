@@ -25,19 +25,26 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
         <div class="main-content">
             <div class="write-post-container">
                 <div class="user-profile">
-                <a href = "profile.php">
-        
-                    <img src="images/profile-pic.png" >
-                    </a>
-                    <?php
+                <?php
                     $id = $_SESSION['userid'];
-                    $sql = "select prenom,nom from users where id='$id'";
+                    $sql = "select prenom,nom,pp from users where id='$id'";
                     $result = $conn->query($sql);  
                     while($row = $result->fetch_assoc()) {
                         $Prenom=$row["prenom"];
                         $Nom = $row["nom"];
-                      }
-
+                        $Photo = $row["pp"];
+                    }
+                    echo "<a href = 'profile.php?id=$id'>
+        
+                    <img src='$Photo' >
+                    </a>";
+                    $_SESSION['photo'] = $Photo;
+                    ?>
+                <!-- <a href = 'profile.php?id=$id'>
+        
+                    <img src="images/profile-pic.png" >
+                    </a> -->
+                    <?php
                     echo "<div><p>$Prenom $Nom</p><small>Public <i class='fas fa-caret-down'></i></small></div>"
                     ?>
                     
