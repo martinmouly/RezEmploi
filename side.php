@@ -19,7 +19,7 @@ class Side{
    
         echo"<nav>
         <div class = 'nav-left'>
-            <img src = 'images/logo.png' class = 'logo'>
+            <a href='home.php'><img src = 'images/logo.png' class = 'logo'></a>
             <ul>
                 <li><img src = 'images/notification.png' ></li>
                 <a href = 'messagerie.php'>
@@ -53,8 +53,8 @@ class Side{
 
             </div>
             <div class = 'logout'>
-                <a href='index.php'>
-                    <img src = 'images/logout.png' >
+                <a href='index.php' style='color: #efefef'>
+                    <p>Log out</p>
                 </a>
 
                 

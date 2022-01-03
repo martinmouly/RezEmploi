@@ -60,9 +60,9 @@ class Person {
             } else {
             echo "erre";
             }
-            echo "index 0 des experiences :"
+            echo "index 0 des experiences :";
             echo $exp[0];
-            echo "premier logo :"
+            echo "premier logo :";
             echo $exp[0]['logo'];
             return $exp;
 

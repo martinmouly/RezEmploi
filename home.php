@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-session_start();
+
 $conn = mysqli_connect('localhost','root','password','dbtest');
 ?>
 <head>
@@ -73,15 +73,7 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
             </div>
             
                 <?php
-                $Prenomspost = array("Prenompost","Barack ","Prenom");
-                $Nomspost = array("Nompost","Obama",'Nom');
-                $Date_heures = array("10/10/2021","10/10/2021","10/10/2021");
-                $profiles = array('images/profile-pic.png','images/Obama.jpg','images/profile-pic.png');
-                $images = array('images/feed-image-1.png','images/Axel.jpg','images/tupac.jpg');
-                $Posts = array('WoWOWOWOWOWOWOWOWOWOW il se passe quoi ici ?????? <span>@DonaldTrump</span> 
-                <a href="#">#incroyable</a> <a href="#">#AllezParis</a>','Fuck <span>@AxelBattut</span> et sa clique
-                <a href="#">#fuckyoubro</a> <a href="#">#Codepromoksdevincipourvoscommandesstackinsats</a>','Tupac me manque
-                <a href="#">#CaliforniaLove</a> <a href="#">#Westcoastbro</a> ');
+                
                 function writePost($Prenompost,$Nompost,$Date_heure,$Post,$image,$profile)
                 {
                     echo "<div class='post-container'>
@@ -97,7 +89,7 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
                 <p class = 'post-text'>$Post 
                 </p>
                 <img src=$image class='post-img'>
-                <div class='post-row'>
+                <!--<div class='post-row'>
                     <div class='activity-icons'>
                             <div><img src='images/like-blue.png' >nlikes</div>
                             <div><img src='images/comments.png' >ncom</div>
@@ -105,14 +97,34 @@ $conn = mysqli_connect('localhost','root','password','dbtest');
                             
                     </div>
                     
-                </div>
+                </div>-->
                 </div>"
                 ;
                 }
-                for($i = 0; $i<count($Prenomspost); $i++)
+                 
+                $sql = "select count(id) from post;";
+                $result = $conn->query($sql);  
+                if ($result->num_rows > 0) {
+                     while($row = $result->fetch_assoc()) {
+                        $count=$row["count(id)"]+1;
+                    }
+                }
+                for($i = $count; $i>=1; $i--)
                 {
-                    
-                    writePost($Prenomspost[$i],$Nomspost[$i],$Date_heures[$i],$Posts[$i],$images[$i],$profiles[$i]);
+                    $sql = "select * from post join users where post.id=$i;";
+                    $result = $conn->query($sql); 
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            $texte=$row["texte"];
+                            $img=$row["img"];
+                            $likes=$row["likes"];
+                            $prenom=$row["prenom"];
+                            $nom=$row["nom"];
+                            $pp=$row["pp"];
+                            $dates=$row["dates"];
+                        }
+                    }
+                    writePost($prenom,$nom,$dates,$texte,$img,$pp);
                 }
                 
                 ?>

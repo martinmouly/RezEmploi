@@ -4,7 +4,7 @@ use dbtest;
 -- TABLES 
 
 drop table if exists post;
-
+drop table if exists experience;
 drop table if exists users;
 drop table if exists post;
 drop table if exists experience;
@@ -28,7 +28,7 @@ logo varchar(100),
 title varchar(75),
 field varchar(30),
 more varchar(1000),
-date  varchar(15),
+dates datetime,
 isformation BOOLEAN 
 );
 
@@ -38,6 +38,7 @@ texte varchar(50),
 img varchar(50),
 likes int,
 id_user int,
+dates DATETIME NOT NULl DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (id_user) REFERENCES users(id)
 );
 

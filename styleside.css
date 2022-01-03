@@ -38,16 +38,11 @@ nav{
 }
 .nav-user-icon a img {
     width: 40px;
-    border-radius:50%;
+    border-radius: 50%;
     cursor : pointer;
     
 }
-.logout  {
-    width: 40px;
-    border-radius:50%;
-    cursor : pointer;
-    
-}
+
 .nav-user-icon{
     margin: left 30px;
 }
