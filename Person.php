@@ -46,12 +46,13 @@ class Person {
                    }
             function getListexp(){
               $sql = "select * from experience where idcv=$this->id";
-              $result = $conn->query($sql);  
+              $result = $conn->query($sql); 
+              $exp=array(); 
             if ($result->num_rows > 0) {
             // output data of each row
                 while($row = $result->fetch_assoc()) {
                 echo "prenom: " . $row["prenom"];
-                $exp = $row;
+                array_push($exp,$row) ;
                 }
                 
             } else {
