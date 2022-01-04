@@ -35,6 +35,8 @@
     <form method="get">
     <?php
     include("Person.php");
+    include("Tools.php");
+    $tools = new Tools();
     $nom ='Buterin ';
     $prenom = 'vitalik';
     $pp = 'images/vitalik.jpg';
@@ -45,8 +47,9 @@
     $me = new Person(1,$nom,$prenom,$pp,$small_description,array($experience1,$experience2));
     $other = new Person(2,"user","other","images/axel.jpg",$small_description,array($experience1,$experience2));
     $prenom2 = "Prenom";$nom2 = "Nom";
-    $p = array($me,$other);
-    
+    // $p = array($me,$other);
+    $id = $_SESSION['userid'];
+    $p = $tools->
     function dispContact($perso){
         echo "<button class='online-list' name = 'idOther' type ='submit' value ={$perso->id}>
         <div class='online'>
@@ -56,12 +59,13 @@
     </button>";
     }
     
-    for ($u=1;$u<20;$u++)
-    {
+    // for ($u=1;$u<20;$u++)
+    // {
        
-        array_push($p,new Person($u,$nom2.$u,$prenom2.$u, 'images/member-2.png',"",NULL));
-        dispContact($p[$u]);
-    }
+    //     array_push($p,new Person($u,$nom2.$u,$prenom2.$u, 'images/member-2.png',"",NULL));
+    //     dispContact($p[$u]);
+    // }
+
 
     ?>
     
